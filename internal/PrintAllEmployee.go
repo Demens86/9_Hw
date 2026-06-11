@@ -10,9 +10,10 @@ func PrintAllEmployees(employees []modules.Employee) {
 		fmt.Println("Список сотрудников пуст!")
 	} else {
 		fmt.Println("\n--- Список всех сотрудников ---")
-		for i, emp := range employees {
-			fmt.Printf("%d. Имя: %s, Возраст: %d, Должность: %s, Зарплата: %.2f\n",
-				i+1, emp.Name, emp.Age, emp.Position, emp.Salary)
+		for _, emp := range employees {
+			fmt.Printf("%d. Имя: %s, Возраст: %d, Должность: %s, Зарплата: %.2f, Электронная почта: %s, "+
+				"Статус: %t\n",
+				emp.ID, emp.Name, emp.Age, emp.Position, emp.Salary, emp.Email, emp.IsActive)
 		}
 	}
 }
