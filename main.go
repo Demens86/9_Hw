@@ -15,4 +15,15 @@ func main() {
 	}
 	internal.PrintAllEmployees(modules.Employees)
 
+	fmt.Println()
+	fmt.Println("---------------")
+
+	internal.ChangeSalary()
+	err1 := internal.WriteInFile(modules.Employees)
+	if err1 != nil {
+		return
+	}
+	fmt.Println("---------------")
+	internal.PrintAllEmployees(modules.Employees)
+
 }
